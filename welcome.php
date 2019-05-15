@@ -3,6 +3,8 @@ require_once('database_connection.php');
 
 if(isset($_GET["session_id"])) {
    $query = "SELECT * FROM login_session_ids WHERE session_id = '".$_GET["session_id"]."'";
+
+   $query2 = "SELECT  t1.u_id, t2.surname FROM login_session_ids AS t1 INNER JOIN user_accounts AS t2 on t1.u_id = t2.u_id WHERE  t1.session_id = '".$_GET["session_id"]."'";
     $result = mysqli_query($dbc,$query);
 
 	if(mysqli_num_rows($result)>0)
@@ -29,7 +31,8 @@ if(isset($_GET["session_id"])) {
 		echo '<h3>Session not started properly. Please log in using fingerprint scanner.</h3>';
 	}
    
-   echo "<h1> </h1>";
+   echo "<h1>Doctor ID" .$row['u_id']. "</h1>";
+   echo "<h1>Doctor ID" .$surname "</h1>";
 }
 else
 {
