@@ -2,40 +2,6 @@
 <?php
 require_once('database_connection.php');
 
-if(isset($_GET["session_id"])) {
-   $query = "SELECT * FROM login_session_ids WHERE session_id = '".$_GET["session_id"]."'";
-    $result = mysqli_query($dbc,$query);
-
-	if(mysqli_num_rows($result)>0)
-	{
-		$row = mysqli_fetch_array($result);
-		$lifetime = $row['lifetime'];
-		$u_id = $row['u_id']; 
-		$date_created = $row['date_created'];
-		
-		$date     = strtotime($date_created);
-		$current  = time();;
-		$difference = $current - $date;
-		
-		if(($difference - $lifetime)>0)
-		{
-			echo '<h3>Session expired. Please log in again</h3>';
-			exit;
-		}
-			
-		mysqli_close($dbc);
-	}
-	else
-	{
-		echo '<h3>Session not started properly. Please log in using fingerprint scanner.</h3>';
-	}
-   
-   echo "<h1> </h1>";
-}
-else
-{
-   echo '<h3>Session not started properly. Please log in using fingerprint scanner.</h3>';
-}
 
 
 require_once 'utils.php';
@@ -59,24 +25,7 @@ $tickets_remaining=$row['remaining'];
 
 ?>
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "games";
 
-
-$db = mysqli_connect('localhost','root','','games')
-or die('Error connecting to MySQL server.');
-  if (isset($_POST["send"]))
-{
-  $username = trim($_SESSION["username"]); 
-   
-   $query = "INSERT INTO gyndrtp (  username ) values ('$username')";
-   mysqli_query($db , $query) or die('Error in inserting.');
-
-}
-?>
 
 <?php
 $servername = "localhost";
@@ -255,6 +204,62 @@ if(isset($_POST['submit'])){
     </div>
     </div>
     <div class="col-md-6 col-lg-3">
+    <?php
+
+$link = mysqli_connect("localhost", "root", "", "wamuiga_db");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt select query execution
+$sql = "SELECT t1.u_id, t2.surname FROM login_session_ids AS t1 INNER JOIN user_accounts AS t2 on t1.u_id = t2.u_id WHERE t1.session_id ";
+ 
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+               
+                echo "<h6 class='card text-white bg-flat-color-2'>DR," . $row['surname'] . "</h6>";
+            echo "</tr>";
+        }
+       
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "wamuiga_db";
+
+$db = mysqli_connect('localhost','root','','wamuiga_db')
+or die('Error connecting to MySQL server.');
+if (isset($_POST["send"]))
+{
+    $surname = $row['surmane'];
+  $surname = trim($surname["surname"]); 
+ 
+   
+   $query = "INSERT INTO gyndrtp (  username_doc ) values ('$surname')";
+   mysqli_query($db , $query) or die('Error in inserting.');
+
+}
+
+  
+?>
     <h2>Gynaecology</h2>
     </div>
 

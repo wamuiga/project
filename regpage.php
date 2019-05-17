@@ -10,7 +10,7 @@ session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: desk.php");
     exit;
 }
 
@@ -132,7 +132,7 @@ div {
    <div>    
 <form action="" method="post" >
 <br>
-<a class="page-scroll" href="welcome.php" style="color: #fff;">Back</a>
+<a class="page-scroll" href="desk.php" style="color: #fff;">Back</a>
   <H2><CENTER>SUBMIT  INFORMATION:</CENTER></H2><hr>
   <CENTER>
 <input type="text" name="firstname"  id="firstname" placeholder="f i r s t  n a m e"><br>

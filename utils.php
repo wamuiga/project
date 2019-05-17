@@ -1,6 +1,6 @@
 <?php
 $dbhost = 'localhost'; //Your database server address
-$dbname = 'games'; // Your Database Name
+$dbname = 'wamuiga_db'; // Your Database Name
 $dbuser = 'root'; // ...db username
 $dbpass = ''; // ...db password
 

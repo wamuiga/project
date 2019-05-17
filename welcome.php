@@ -1,46 +1,3 @@
-<?php
-require_once('database_connection.php');
-
-if(isset($_GET["session_id"])) {
-   $query = "SELECT * FROM login_session_ids WHERE session_id = '".$_GET["session_id"]."'";
-
-   $query2 = "SELECT  t1.u_id, t2.surname FROM login_session_ids AS t1 INNER JOIN user_accounts AS t2 on t1.u_id = t2.u_id WHERE  t1.session_id = '".$_GET["session_id"]."'";
-    $result = mysqli_query($dbc,$query);
-
-	if(mysqli_num_rows($result)>0)
-	{
-		$row = mysqli_fetch_array($result);
-		$lifetime = $row['lifetime'];
-		$u_id = $row['u_id']; 
-		$date_created = $row['date_created'];
-		
-		$date     = strtotime($date_created);
-		$current  = time();;
-		$difference = $current - $date;
-		
-		if(($difference - $lifetime)>0)
-		{
-			echo '<h3>Session expired. Please log in again</h3>';
-			exit;
-		}
-			
-		mysqli_close($dbc);
-	}
-	else
-	{
-		echo '<h3>Session not started properly. Please log in using fingerprint scanner.</h3>';
-	}
-   
-   echo "<h1>Doctor ID" .$row['u_id']. "</h1>";
-   echo "<h1>Doctor ID" .$surname "</h1>";
-}
-else
-{
-   echo '<h3>Session not started properly. Please log in using fingerprint scanner.</h3>';
-}
-
-
-?>
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -95,7 +52,86 @@ else
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <h3 class="menu-title">......</h3><!-- /.menu-title -->
+                
+                    <h3 class="menu-title">
+                    <?php
+require_once('database_connection.php');
+
+if(isset($_GET["session_id"])) {
+   $query = "SELECT * FROM login_session_ids WHERE session_id = '".$_GET["session_id"]."'";
+   
+    $result = mysqli_query($dbc,$query);
+
+	if(mysqli_num_rows($result)>0)
+	{
+		$row = mysqli_fetch_array($result);
+		$lifetime = $row['lifetime'];
+        $u_id = $row['u_id']; 
+		$date_created = $row['date_created'];
+		
+		$date     = strtotime($date_created);
+		$current  = time();;
+		$difference = $current - $date;
+		
+		if(($difference - $lifetime)>0)
+		{
+			echo '<h3>Session expired. Please log in again</h3>';
+			exit;
+		}
+			
+		mysqli_close($dbc);
+	}
+	else
+	{
+		echo '<h3>Session not started properly. Please log in using fingerprint scanner.</h3>';
+	}
+   
+   echo "<h6 class='card text-white bg-flat-color-4'>Doctor ID" .$row['u_id']. "</h6>";
+   
+ 
+}
+else
+{
+   echo '<h3>Session not started properly. Please log in using fingerprint scanner.</h3>';
+}
+
+
+?>
+                    <?php
+
+$link = mysqli_connect("localhost", "root", "", "wamuiga_db");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt select query execution
+$sql = "SELECT t1.u_id, t2.surname FROM login_session_ids AS t1 INNER JOIN user_accounts AS t2 on t1.u_id = t2.u_id WHERE t1.session_id ";
+ 
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+               
+                echo "<h6 class='card text-white bg-flat-color-2'>DR," . $row['surname'] . "</h6>";
+            echo "</tr>";
+        }
+       
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+?></h3>
+                    
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">

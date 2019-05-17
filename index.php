@@ -58,7 +58,7 @@ body {
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {   
-  float: left;
+  float: center;
     width: 20%;
     padding-left: 30px;
     font-size: 8px;
@@ -66,13 +66,13 @@ body {
 
 /* Right column */
 .rightcolumn {
-    float: left;
+    float: center;
     width: 20%;
     padding-left: 10px;
     font-size: 8px;
 }
 .rightcolumn1{
-  float: right;
+  float: center;
   padding-right: 55px;
     width: 20%;
     padding-left: 10px;
@@ -251,7 +251,17 @@ body {margin:0;}
   background: #ddd;
   color: black;
 }
-
+.rightcolumn {
+         float: center;
+         width: 40%;
+         height: 600px;
+         padding-left: 50px;
+         padding-top: 20px;
+         font-size: 12px;
+         text-align: center;    
+         border-radius: 10px;
+         background-color: #fbff00f7;
+     }
 
 </style>
 <!DOCTYPE html>
@@ -267,24 +277,41 @@ body {margin:0;}
     <script src="main.js"></script>
 </head>
 <body>
-<div class="container">
-<div class="card shadow-sm">
+
+       
+
+<div class="rightcolumn">
+<br><br><br>
+<h1></h1>
+<br><br>
+<a>
+<a href="index.php?action=new_ticket"   >
+<button class="success" onclick="printDiv('printTable')" value="print a div!">
+    <br><br><br><br>
+request ticket
+<br><br><br><br>
+</button></a>
+
+<div id="printTable">
         <?php
-            echo "ticket Number:".$ticket_number;
+            echo "ticket Number: M".$ticket_number;
             echo "<br>ticket timestamp:".$ticket_timestamp
             ?>
-</div>
-    <a href="index.php?action=new_ticket"><button>request ticket</button></a>
-    <a href="doc.php">Doc</a>
-    <a href="admin.php">admin</a>
-</div>
+            </div>
+
+           
  
 </body>
 <script>
-function print_ticket() {
-   var ticket=document.getElementById("ticket");
-   window.print();
-}
+  function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
 
-</script>
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+  </script>
 </html>
