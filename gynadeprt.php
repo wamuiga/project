@@ -4,7 +4,7 @@
     $ticket_timestamp="";
    
  if (isset($_GET['action']) && $_GET['action']=="new_ticket") {
-    queryMysql("INSERT INTO `gyn` (`id`, `entry_stamp`, `exit_stamp`) VALUES (NULL, CURRENT_TIMESTAMP, NULL);");
+    queryMysql("INSERT INTO `gyn` (`id`, `entry_stamp`, `exit_stamp`,`department_id` ) VALUES (NULL, CURRENT_TIMESTAMP, NULL, 2);");
     $result=queryMysql("SELECT * FROM gyn ORDER BY id DESC;");
     $row=$result->fetch_array(MYSQLI_ASSOC);
     $ticket_number=$row['id'];
@@ -89,7 +89,7 @@
          font-size: 12px;
          text-align: center;    
          border-radius: 10px;
-         background-color: #fbff00f7;
+         background-color: #e8e9ea;
      }
      
 div {
@@ -132,14 +132,7 @@ div {
 </style>
 
     <script src="main.js"></script>
-    <script>
-//Using setTimeout to execute a function after 5 seconds.
-setTimeout(function () {
-   //Redirect with JavaScript
-   window.location.href= 'http://localhost/project/home.php';
-}, 10000);
-
-</script>
+  
 <body>
 <br><br>
 <h1>Gynaecology</h1>

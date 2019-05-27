@@ -1,3 +1,18 @@
+<?php
+ require_once 'utils.php';
+    $ticket_number="";
+    $ticket_timestamp="";
+   
+ if (isset($_GET['action']) && $_GET['action']=="new_ticket") {
+    queryMysql("INSERT INTO `ticket` (`id`, `entry_stamp`, `exit_stamp`) VALUES (NULL, CURRENT_TIMESTAMP, NULL);");
+    $result=queryMysql("SELECT * FROM ticket ORDER BY id DESC;");
+    $row=$result->fetch_array(MYSQLI_ASSOC);
+    $ticket_number=$row['id'];
+    $ticket_timestamp=$row['entry_stamp'];
+    
+    }
+ 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +29,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-$db = mysqli_connect('localhost','root','','games')
+$db = mysqli_connect('localhost','root','','wamuiga_db')
  or die('Error connecting to MySQL server.');
    if (isset($_POST["send"]))
  {
@@ -25,12 +40,12 @@ $db = mysqli_connect('localhost','root','','games')
   $age = trim($_POST['age']);
   $city = trim($_POST['city']);
    $phonenumber = trim($_POST['phonenumber']);
-  $diagosis = trim($_POST['diagosis']);
-  $comment = trim($_POST['comment']);
+  $reg_no = trim($_POST['reg_no']);
+  
   $username = trim($_SESSION["username"]); 
    
-   $query = "INSERT INTO infor ( firstname, lastname, city, age, phonenumber, diagosis, comment, username ) values ('$firstname',
-    '$lastname','$city','$age','$phonenumber','$diagosis','$comment','$username')";
+   $query = "INSERT INTO infor ( firstname, lastname, city, age, phonenumber, reg_no, username ) values ('$firstname',
+    '$lastname','$city','$age','$phonenumber','$reg_no', '$username')";
    mysqli_query($db , $query) or die('Error in inserting.');
 
    
@@ -139,50 +154,41 @@ div {
 <input type="text" name="lastname"  id="lastname" placeholder="l a s t n a m e"><br>
    <input type="text" name="age" id="age" placeholder="a g e "/><br>
     <input type="text" name="city" id="city" placeholder="c i t y "/><br>
+    <input type="text" name="reg_no" id="reg_no" placeholder="R E G___N O "/><br>
 <input type="text" name="phonenumber"  id="phonenumber" placeholder="p h o n e n u m b e r  "><br>
 
-<select name="diagosis" type="text" >
-    <option value="volvo">d i a g n o s e s</option>
-    <option value="Hypertension">Hypertension</option>
-    <option value="Hyperlipidemia">Hyperlipidemia</option>
-    <option value="Diabetes">Diabetes</option>
-    <option value="Back pain">Back pain</option>
-    <option value="Anxiety">Anxiety</option>
-    <option value="Obesity">Obesity</option>
-    <option value="Allergic rhinitis">Allergic rhinitis</option>
-    <option value="Reflux esophagitis">Reflux esophagitis</option>
-    <option value="Respiratory problems">Respiratory problems</option>
-    <option value="Hypothyroidism">Hypothyroidism</option>
-    <option value="Visual refractive errors">Visual refractive errors</option>
-    <option value="General medical exam">General medical exam</option>
-    <option value="Osteoarthritis">Osteoarthritis</option>
-    <option value="Fibromyalgia / myositis">Fibromyalgia / myositis</option>
-    <option value="Malaise and fatigue">Malaise and fatigue</option>
-    <option value="Pain in joint">Pain in joint</option>
-    <option value="Acute laryngopharyngitis">Acute laryngopharyngitis</option>
-    <option value="Acute maxillary sinusitis">Acute maxillary sinusitis</option>
-    <option value="Major depressive disorder">Major depressive disorder</option>
-    <option value="Acute bronchitis">Acute bronchitis</option>
-    <option value="Asthma">Asthma</option>
-    <option value="Depressive disorder">Depressive disorder</option>
-    <option value="Nail fungus">Nail fungus</option>
-    <option value="Coronary atherosclerosis">Coronary atherosclerosis</option>
-    <option value="Urinary tract infection">Urinary tract infection</option>
-  
-    </select>
- <hr>
-  </div>
- </CENTER>
-
-<div class="rightcolumn">
-<br>Additional Comments: <br><h6>Optional</h6>
-  <textarea type="text" name="comment" id="comment" rows="20" cols="90" placeholder="more detailed diagnoses................ " 
-  style="background:rgba(252, 248, 227, 0.62);"></textarea>
-
-<br><br>
+<a href="regpage.php?action=new_ticket"  class="button" onclick="printDiv('printTable')" value="print a div!" >
 <input type="submit" name="send" value="send"  id="send" class="btn btn-success">
+</a>
+
 <br><hr>
 </div>
+<div class="rightcolumn">
+<br><br><br>
 
+
+<div id="printTable">
+        <?php
+            
+            echo "<h2>ticket Number: G</h2>".$ticket_number;
+            echo "<br>ticket timestamp:".$ticket_timestamp;
+            ?>
+            </div>
+     
+
+    </div>
+    </div>
+  <script>
+  function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+  </script>
 </body>
 </html>

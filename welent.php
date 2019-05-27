@@ -28,10 +28,10 @@ $tickets_remaining=$row['remaining'];
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "games";
+$dbname = "wamuiga_db";
 
 
-$db = mysqli_connect('localhost','root','','games')
+$db = mysqli_connect('localhost','root','','wamuiga_db')
 or die('Error connecting to MySQL server.');
   if (isset($_POST["send"]))
 {
@@ -39,48 +39,6 @@ or die('Error connecting to MySQL server.');
    
    $query = "INSERT INTO entdrtp (  username ) values ('$username')";
    mysqli_query($db , $query) or die('Error in inserting.');
-
-}
-?>
-
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "games";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-if(isset($_POST['submit'])){
-
-  $search = $_POST['search'];
-
-  $sql = "SELECT * FROM infor WHERE city = '$search'";
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-      // output data of each row
-
-    echo "<br><hr>SHOW AVAILABLE BLOODTYPE  AND CITY <br><hr>";
-      while($row = mysqli_fetch_assoc($result))
-       {
-         
-          echo "
-               <div class='rightcolumn'>
-               <h1> " . $row["city"]."</h1>".  
-
-              "<span> CITY :<h1> " . $row["city"]."</h1>".
-              "</div>";
-      }
-  }
-   else  
-  {
-    $output = "0 results:";
-  }
 
 }
 ?>
@@ -128,9 +86,13 @@ if(isset($_POST['submit'])){
 
 </head>
     <style type="text/css">
+     body{ font: 14px sans-serif;
+         text-align: center; 
+          background-color: #fff;
+        }
         .navbar {
   overflow: hidden;
-  background-color: #fbff00f7;
+  background-color: #f3f3f3;
   
   top: 0;
   width: 100%;
@@ -151,13 +113,13 @@ if(isset($_POST['submit'])){
   background: #ddd;
   color: white;
 }
-        body{ font: 14px sans-serif; text-align: center; }
+       
         .rightcolumn {
-         float: right;
-         width: 15%;
-         left: 5;
+       
+         width: 65%;
+       
          padding-top: 10px;
-         font-size: 8px;
+         font-size: 18px;
      }
      
      
@@ -187,8 +149,66 @@ if(isset($_POST['submit'])){
        
      
      }
-     
-    </style>
+     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+    
+             
+        .rightcolumn {
+         float: right;
+         width: 40%;
+         height: 65%;
+         padding-left: 50px;
+         padding-top: 20px;
+         font-size: 12px;
+         text-align: center;    
+         border-radius: 10px;
+         background-color: #ffffff;
+     }
+    
+ </style>
     <script src="main.js"></script>
 <body>
 <div class="navbar">
@@ -225,201 +245,158 @@ if(isset($_POST['submit'])){
 
     </div>
 
-
-<br><br>
-
-
-    <br><br>
 <div class="row">
-
-
-
-            <?php
-$server = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'games';
-
-// connect to the database
-$mysqli = new mysqli($server, $user, $pass, $db);
-foreach($mysqli->query('SELECT SUM(total_tickets) FROM entdb' ) as $row ){
-
-    echo "
+<div class="header-left">
+   <div class="form1"><br>
     
-    <div class='col-md-4 col-lg-2'>
-    
-    <div class='card text-black bg-flat-color-6'>
-    <div class='card-body p-0 clearfix'>
-    <i class='fa fa-users bg-flat-color-6 p-3 font-2xl mr-3 float-left text-light'></i>
-    <h5><br> Ear nose and throat (ENT)</h5><br><br><br>";
-    echo "TOTAL tickets : " . $row['SUM(total_tickets)'];
-
-    echo "<br></div></div></div>";
-    
-    }
- 
-$output = NULL; 
-?>
-
-<?php
-$server = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'games';
-
-// connect to the database
-$mysqli = new mysqli($server, $user, $pass, $db);
-foreach($mysqli->query('SELECT SUM(total_tickets) FROM gyn' ) as $row ){
-
-    echo "
-  
-    <div class='col-md-4 col-lg-2'>
-    
-    <div class='card text-white bg-flat-color-2'><a href='welgyn.php'>
-    <div class='card-body p-0 clearfix'>
-    <i class='fa fa-users bg-flat-color-6 p-3 font-2xl mr-3 float-left text-light'></i>
-    <h5> Gynaecology</h5>";
-    echo "TOTAL tickets : " . $row['SUM(total_tickets)'];
-
-    echo "</div></div></a></div>";
-    
-    }
- 
-$output = NULL; 
-?>
-
-<?php
-$server = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'games';
-
-// connect to the database
-$mysqli = new mysqli($server, $user, $pass, $db);
-foreach($mysqli->query('SELECT SUM(total_tickets) FROM micrdb' ) as $row ){
-
-    echo "
-    
-    <div class='col-md-4 col-lg-2'>
-    <div class='card text-white bg-flat-color-1'><a href='welmicr.php'>
-    <div class='card-body p-0 clearfix'>
-    <i class='fa fa-users bg-flat-color-6 p-3 font-2xl mr-3 float-left text-light'></i>
-    <h5> Microbiology</h5>";
-    echo "TOTAL tickets : " . $row['SUM(total_tickets)'];
-
-    echo "</div></div></a></div>";
-    
-    }
- 
-$output = NULL; 
-?>
-
-
-<?php
-$server = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'games';
-
-// connect to the database
-$mysqli = new mysqli($server, $user, $pass, $db);
-foreach($mysqli->query('SELECT SUM(total_tickets) FROM oncdb' ) as $row ){
-
-    echo "
-    
-    <div class='col-md-4 col-lg-2'>
-    <div class='card text-white bg-flat-color-4'><a href='welonc.php'>
-    <div class='card-body p-0 clearfix'>
-    <i class='fa fa-users bg-flat-color-6 p-3 font-2xl mr-3 float-left text-light'></i>
-    <h5> Oncology</h5>";
-    echo "TOTAL tickets : " . $row['SUM(total_tickets)'];
-
-    echo "</div></div></a></div>";
-    
-    }
- 
-$output = NULL; 
-?>
-     <?php
-$server = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'games';
-
-// connect to the database
-$mysqli = new mysqli($server, $user, $pass, $db);
-foreach($mysqli->query('SELECT SUM(total_tickets) FROM opthdb' ) as $row ){
-
-    echo "
-    
-    <div class='col-md-4 col-lg-2'>
-    <div class='card text-white  alt bg-dark'><a href='welopth.php'>
-    <div class='card-body p-0 clearfix'>
-    <i class='fa fa-users bg-flat-color-6 p-3 font-2xl mr-3 float-left text-light'></i>
-    <h5> Ophthalmology</h5>";
-    echo "TOTAL tickets : " . $row['SUM(total_tickets)'];
-
-    echo "</div></div></a></div>";
-    
-    }
- 
-$output = NULL; 
-?>  
-  <?php
-$server = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'games';
-
-// connect to the database
-$mysqli = new mysqli($server, $user, $pass, $db);
-foreach($mysqli->query('SELECT SUM(total_tickets) FROM phydb' ) as $row ){
-
-    echo "
-    
-    <div class='col-md-4 col-lg-2'>
-    <div class='card text-white bg-flat-color-5'><a href='welphy.php'>
-    <div class='card-body p-0 clearfix'>
-    <i class='fa fa-users bg-flat-color-6 p-3 font-2xl mr-3 float-left text-light'></i>
-    <h5> Pharmacy</h5>";
-    echo "TOTAL tickets : " . $row['SUM(total_tickets)'];
-
-    echo "</div></div></a></div>";
-    
-    }
- 
-$output = NULL; 
-?>      
-
-
-
-
-
+    <form method="post">
+        
+    <div class="wrap">
+   <div class="search">
+      <input type="text" name="search" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" name ="submit" value="search" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
 </div>
+</form>
+        
+    </CENTER>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+</div> 
 
+    </section>
+
+ 
+      <?php
+    $output = NULL; 
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "wamuiga_db";
+    
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    
+    if(isset($_POST['submit'])){
+    
+      $search = $_POST['search'];
+    
+      $sql = "SELECT * FROM infor WHERE reg_no = '$search'";
+      $result = mysqli_query($conn, $sql);
+    
+      if (mysqli_num_rows($result) > 0) {
+          // output data of each row
+          while($row = mysqli_fetch_assoc($result))
+           {
+             
+              echo "
+              <div class='row'>
+     <div class='col-xl-2 col-lg-2'>
+              <div class='card'>
+                  <div class='card-body'>
+                      <div class='stat-widget-one'>
+                          <div class='stat-content dib'>
+                              <div class='stat-text'><h3>Name :</h3>". $row["lastname"].
+                               "</div></div></div></div></div></div>
+
+                               <div class='col-xl-2 col-lg-2'>
+              <div class='card'>
+                  <div class='card-body'>
+                      <div class='stat-widget-one'>
+                          <div class='stat-content dib'><h3>PhoneNumber :</h3>". $row["phonenumber"]. "
+                          </div></div></div></div></div>
+
+                          <div class='col-xl-2 col-lg-2'>
+              <div class='card'>
+                  <div class='card-body'>
+                      <div class='stat-widget-one'>
+                          <div class='stat-content dib'><h3>Reg No :</h3>".$row["reg_no"]."</div></div></div></div></div>
+                          
+                          <div class='col-xl-2 col-lg-2'>
+              <div class='card'>
+                  <div class='card-body'>
+                      <div class='stat-widget-one'>
+                          <div class='stat-content dib'>
+                          <select name='diagosis' type='text' >
+    <option value='volvo'>d i a g n o s e s</option>
+    <option value='Hypertension'>Hypertension</option>
+    <option value='Hyperlipidemia'>Hyperlipidemia</option>
+    <option value='Diabetes'>Diabetes</option>
+    <option value='Back pain'>Back pain</option>
+    <option value='Anxiety'>Anxiety</option>
+    
+  
+    </select>
+    </div></div></div></div></div>
+    
+    <div class='col-xl-6 col-lg-3'>
+    <div class='card'>
+        <div class='card-body'>
+            <div class='stat-widget-one'>
+                <div class='stat-content dib'>
+
+                <h6>Additional Comments: Optional</h6>
+                <textarea type='text' name='comment' id='comment' rows='20' cols='40' placeholder='more detailed diagnoses.....' 
+                style='background:rgba(252, 248, 227, 0.62);'></textarea>
+
+                         </div></div></div></div></div></div> ";
+          }
+      }
+       else  
+      {
+        $output = "0 results:";
+      }
+    
+    }
+    ?>
+    <?php  echo $output; ?>
 
    
+<div class="rightcolumn">
 
-</div>
-    <a href="regpage.php" class="btn btn-danger">Register Patient</a>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "wamuiga_db";
 
+$db = mysqli_connect('localhost','root','','wamuiga_db')
+or die('Error connecting to MySQL server.');
+if (isset($_POST["send"]))
+{
 
-   <h6>OR</h6>
+  $reg_no = trim($row["reg_no"]); 
  
+   
+  $query = "INSERT INTO infor ( firstname, lastname ) values ('$firstname')";
+ mysqli_query($db , $query) or die('Error in inserting.');
+}
 
-   <div class="header-left">
-            <button class="search-trigger"><i class="fa fa-search"></i></button>
-            <div class="form-inline">
-                <form class="search-form">
-                    <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search ..." aria-label="Search">
-                    <button class="search-close" input type="submit" name ="submit" value="search"type="submit"><i class="fa fa-close"></i></button>
-                </form>
-            </div>
+  
+?>
 
- 
 
-<div>    
+  <div>
+        <form action="" method="post" >
+        <button  class="btn btn-success">Call Next Patient
+        <a href="welent.php?action=new_patient" > 
+       
+        <input type="submit" name="send" value="send"  id="send"  ></a>
+        </button>
+        </form>
+       
+   
 
+   
 
 
 <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>

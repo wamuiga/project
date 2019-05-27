@@ -136,8 +136,8 @@ div {
 //Using setTimeout to execute a function after 5 seconds.
 setTimeout(function () {
    //Redirect with JavaScript
-   window.location.href= 'http://localhost/project/home.php';
-}, 10000);
+   window.location.href= 'http://localhost/project/desk.php';
+}, 4000);
 
 </script>
 <body>

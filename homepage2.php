@@ -121,7 +121,7 @@ setTimeout(function () {
     </div>
     <div class="col-sm-6 col-lg-6">
 </span><span>
-<a href="gynadeprt.php"class="button button5" style="font-color: white">Gynaecology </a>
+<a href="gynadeprt.php"class="button button5" style="font-color: white">Gynecology </a>
         <span>
     </div>
     <div class="col-sm-6 col-lg-6">

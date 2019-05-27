@@ -190,13 +190,172 @@
 
 <center><h3> Doctors </h3></center>
 
+<div class="row">
+<div class="col-xl-2 col-lg-2">
+                <div class="card"><a href="entdeprt.php">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            
+                            <div class="stat-content dib">
+                                <div class="stat-text">Ear nose and throat (ENT)</div>
+                                <div class="stat-digit"><?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'wamuiga_db';
+// connect to the database
+$mysqli = new mysqli($server, $user, $pass, $db);
+foreach($mysqli->query('SELECT SUM(total_tickets) FROM entdb' ) as $row ){
+    echo " " . $row['SUM(total_tickets)'];
+    }
+ 
+$output = NULL; 
+?></div>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2">
+                <div class="card"><a href="gynadeprt.php">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            
+                            <div class="stat-content dib">
+                                <div class="stat-text">Gynaecology</div>
+                                <div class="stat-digit">
+                                <?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'wamuiga_db';
+// connect to the database
+$mysqli = new mysqli($server, $user, $pass, $db);
+foreach($mysqli->query('SELECT SUM(total_tickets) FROM gyn' ) as $row ){
+    echo " " . $row['SUM(total_tickets)'];
+    }
+ 
+$output = NULL; 
+?>
+                                </div>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2">
+                <div class="card"> <a href="microdeprt.php">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            
+                            <div class="stat-content dib">
+                                <div class="stat-text">Microbiology</div>
+                                <div class="stat-digit">
+                                <?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'wamuiga_db';
+// connect to the database
+$mysqli = new mysqli($server, $user, $pass, $db);
+foreach($mysqli->query('SELECT SUM(total_tickets) FROM micrdb' ) as $row ){
+    echo " " . $row['SUM(total_tickets)'];
+    }
+ 
+$output = NULL; 
+?>
+                                </div>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2">
+                <div class="card"><a href="oncodeprt.php">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            
+                            <div class="stat-content dib">
+                                <div class="stat-text">Oncology</div>
+                                <div class="stat-digit"><?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'wamuiga_db';
+// connect to the database
+$mysqli = new mysqli($server, $user, $pass, $db);
+foreach($mysqli->query('SELECT SUM(total_tickets) FROM oncdb' ) as $row ){
+    echo " " . $row['SUM(total_tickets)'];
+    }
+ 
+$output = NULL; 
+?></div>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2">
+                <div class="card"><a href="opthdeprt.php">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            
+                            <div class="stat-content dib">
+                                <div class="stat-text">Ophthalmology</div>
+                                <div class="stat-digit"><?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'wamuiga_db';
+// connect to the database
+$mysqli = new mysqli($server, $user, $pass, $db);
+foreach($mysqli->query('SELECT SUM(total_tickets) FROM opthdb' ) as $row ){
+    echo " " . $row['SUM(total_tickets)'];
+    }
+ 
+$output = NULL; 
+?></div>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2">
+                <div class="card"><a href="phamdeprt.php">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            
+                            <div class="stat-content dib">
+                                <div class="stat-text">Pharmacy</div>
+                                <div class="stat-digit"><?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'wamuiga_db';
+// connect to the database
+$mysqli = new mysqli($server, $user, $pass, $db);
+foreach($mysqli->query('SELECT SUM(total_tickets) FROM phydb' ) as $row ){
+    echo " " . $row['SUM(total_tickets)'];
+    }
+ 
+$output = NULL; 
+?></div>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+
+
+</div>
+
 <div class="row">  
 <?php
 
 $server = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'games';
+$db = 'wamuiga_db';
 
 
 // connect to the database
@@ -250,7 +409,7 @@ EOD;
 $server = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'games';
+$db = 'wamuiga_db';
 
 
 // connect to the database
@@ -305,7 +464,7 @@ EOD;
 $server = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'games';
+$db = 'wamuiga_db';
 
 
 // connect to the database
@@ -360,7 +519,7 @@ EOD;
 $server = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'games';
+$db = 'wamuiga_db';
 
 
 // connect to the database
@@ -416,7 +575,7 @@ EOD;
 $server = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'games';
+$db = 'wamuiga_db';
 
 
 // connect to the database
@@ -469,7 +628,7 @@ EOD;
 $server = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'games';
+$db = 'wamuiga_db';
 
 
 // connect to the database

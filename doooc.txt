@@ -1,0 +1,17 @@
+<select name="diagosis" type="text" >
+    <option value="volvo">d i a g n o s e s</option>
+    <option value="Hypertension">Hypertension</option>
+    <option value="Hyperlipidemia">Hyperlipidemia</option>
+    <option value="Diabetes">Diabetes</option>
+    <option value="Back pain">Back pain</option>
+   
+  
+    </select>
+ <hr>
+  </div>
+ </CENTER>
+
+<div class="rightcolumn">
+<br>Additional Comments: <br><h6>Optional</h6>
+  <textarea type="text" name="comment" id="comment" rows="20" cols="90" placeholder="more detailed diagnoses................ " 
+  style="background:rgba(252, 248, 227, 0.62);"></textarea>
