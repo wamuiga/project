@@ -289,24 +289,9 @@ $output = NULL;
        
     </div>
     </div>
-    <form method="post">
-    <div class="col-md-2 col-lg-2">
-<select name="department" type="text" >
-    <option value="1">Ear nose and throat (ENT)</option>
-    <option value="2">Gynecology</option>
-    <option value="3">Microbiology</option>
-    <option value="4">Oncology</option>
-    <option value="5">Ophthalmology</option>
-    <option value="6">Pharmacy</option>
    
-  
-    </select>
 
-    <?php
-    
-    echo $patient;
-    
-    ?>
+  
     </div>
 
     </div>
@@ -320,24 +305,36 @@ $connect = mysqli_connect("localhost", "root", "", "wamuiga_db");
 </div>
 
   <h3>Test</h3>
+  
+    
+
     <div class="grid-container">
   <div class="grid-item">
- 
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Height / weight check"> Height / weight check  </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Blood pressure check">  Blood pressure check  </div>  
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Cholesterol level check"> Cholesterol level check </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Blood sugar test"> Blood sugar test  </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Throat check"> Throat check  </div>  
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Ear check"> Ear check</div>
+  <form method="post">
+  <select name="d_id" type="text" >
+    <option value="1">d i a g n o s e s</option>
+    <option value="2">Hypertension</option>
+    <option value="3">Hyperlipidemia</option>
+    <option value="4">Diabetes</option>
+    <option value="5">Back pain</option>
+   
   
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Eye check"> Eye check  </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Chest x-ray (for heavy smokers)"> Chest x-ray (for heavy smokers)  </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Hemoglobin"> Hemoglobin  </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Urinalysis"> Urinalysis  </div>  
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Platelet count" > Platelet count </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Occult Blood in stool" > Occult Blood in stool  </div>
-  <div class="grid-item"><input type="checkbox" name="language[]" value="Glucose Serum" > Glucose Serum   </div>
- <div class="grid-item"><input type="checkbox" name="language[]"  value="Electrocardiogram" > Electrocardiogram </div>
+    </select>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Height / weight check"> Height / weight check  </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Blood pressure check">  Blood pressure check  </div>  
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Cholesterol level check"> Cholesterol level check </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Blood sugar test"> Blood sugar test  </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Throat check"> Throat check  </div>  
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Ear check"> Ear check</div>
+  
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Eye check"> Eye check  </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Chest x-ray (for heavy smokers)"> Chest x-ray (for heavy smokers)  </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Hemoglobin"> Hemoglobin  </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Urinalysis"> Urinalysis  </div>  
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Platelet count" > Platelet count </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Occult Blood in stool" > Occult Blood in stool  </div>
+  <div class="grid-item"><input type="checkbox" name="test_name" value="Glucose Serum" > Glucose Serum   </div>
+ <div class="grid-item"><input type="checkbox" name="test_name"  value="Electrocardiogram" > Electrocardiogram </div>
       
   </div>
   </div>
@@ -347,17 +344,40 @@ $connect = mysqli_connect("localhost", "root", "", "wamuiga_db");
 <br><br><br><br><br>
 
   <?php
-          if(isset($_POST["submit"]))
+
+
+$db = mysqli_connect('localhost','root','','wamuiga_db')
+ or die('Error connecting to MySQL server.');
+   if (isset($_POST["send"]))
+ {
+ 
+ 
+  $test_name = trim($_POST['test_name']);
+  $lastname = trim($_POST['d_id']);
+  
+   
+   $query = "INSERT INTO tbl_language ( test_name, d_id) values ('$test_name', '$d_id')";
+   mysqli_query($db , $query) or die('Error in inserting.');
+
+   
+
+ }
+  
+    
+
+
+
+          if(isset($_POST["send"]))
           {
            $for_query = '';
-           if(!empty($_POST["language"]))
+           if(!empty($_POST["test_name"]))
            {
-            foreach($_POST["language"] as $language)
+            foreach($_POST["test_name"] as $test_name)
             {
-             $for_query .= $language . ', ';
+             $for_query .= $test_name . ', ';
             }
             $for_query = substr($for_query, 0, -2);
-            $query = "INSERT INTO tbl_language (name) VALUES ('$for_query')";
+            $query = "INSERT INTO tbl_language (test_name) VALUES ('$for_query')";
             if(mysqli_query($connect, $query))
             {
              echo '<h3>You have select following language</h3>';

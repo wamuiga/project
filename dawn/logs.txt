@@ -1,0 +1,147 @@
+
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%Peter%' OR patients.lastname LIKE '%Peter%' OR patients.reg_no=Peter;
+
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%peter%' OR patients.lastname LIKE '%peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%peter%' OR patients.lastname LIKE '%peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%Peter%' OR patients.lastname LIKE '%Peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%cook%' OR patients.lastname LIKE '%cook%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%gil%' OR patients.lastname LIKE '%gil%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%gil%' OR patients.lastname LIKE '%gil%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%tim%' OR patients.lastname LIKE '%tim%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%ti%' OR patients.lastname LIKE '%ti%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%a%' OR patients.lastname LIKE '%a%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%Peter%' OR patients.lastname LIKE '%Peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%sas%' OR patients.lastname LIKE '%sas%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%sas%' OR patients.lastname LIKE '%sas%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%sas%' OR patients.lastname LIKE '%sas%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%a%' OR patients.lastname LIKE '%a%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%Peter%' OR patients.lastname LIKE '%Peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%Peter%' OR patients.lastname LIKE '%Peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%peter%' OR patients.lastname LIKE '%peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%peter%' OR patients.lastname LIKE '%peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%Peter%' OR patients.lastname LIKE '%Peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%peter%' OR patients.lastname LIKE '%peter%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%a%' OR patients.lastname LIKE '%a%' OR patients.reg_no=0;
+SELECT * from patients WHERE patients.firstname LIKE '%a%' OR patients.lastname LIKE '%a%' OR patients.reg_no=0;
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber) VALUES(,,,,,);
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber) VALUES(,,,,,);
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber) VALUES(Peter,Kahenya,Ingraham,Nakuru,jsjs,jsjsjs);
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber) VALUES(Peter,Kahenya,123,Nakuru,jsjs,jsjsjs);
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber) VALUES('Peter','Kahenya',123,'Nakuru','jsjs','jsjsjs');
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber) VALUES('Peter','Kahenya',123,'Nakuru','jsjs','jsjsjs');
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',123,'Nakuru','jsjs','jsjsjs','');
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',123,'Nakutu','jsjs','jsjsjs','8282');
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',123,'Nakutu','jsjs','jsjsjs','8282');
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',Ingraham,'Nakuru','jsjs','jsjsjs','8282');
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',22,'Nakuru','james','0790373516','38348828');
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',22,'Nakuru','james','0790373516','38348828');
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',21,'Mombasa','Andrew','09393939','9393838');
+INSERT INTO ticket(id,patient_id) VALUES(NULL,);
+INSERT INTO ticket(id,patient_id) VALUES(NULL,);
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Peter','Kahenya',21,'Mombasa','Andrew','09393939','9393838');
+INSERT INTO ticket(id,patient_id) VALUES(NULL,);
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+INSERT INTO ticket(id,patient_id) VALUES(NULL,);
+INSERT INTO ticket(id,patient_id) VALUES(NULL,);
+INSERT INTO ticket(id,patient_id) VALUES(NULL,);
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+INSERT INTO patients(firstname,lastname,age,city,username,phonenumber,reg_no) VALUES('Kelvin','Wamuiga',22,'Nyeri','James','838383838','837377373');
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+SELECT * from patients WHERE patients.firstname LIKE '%a%' OR patients.lastname LIKE '%a%' OR patients.reg_no=0;
+INSERT INTO ticket(id,patient_id) VALUES(NULL,12);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+INSERT INTO ticket(id,patient_id) VALUES(NULL,12);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+SELECT * from patients WHERE patients.firstname LIKE '%1234%' OR patients.lastname LIKE '%1234%' OR patients.reg_no=1234;
+INSERT INTO ticket(id,patient_id) VALUES(NULL,4);
+SELECT max(id) as latest FROM `ticket` WHERE 1
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT * from ticket as t INNER JOIN patients as p ON p.id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT * from ticket as t INNER JOIN patients as p ON p.patient_id=t.patient_id WHERE t.exit_stamp IS NULL;
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT patient_id,id FROM `ticket` WHERE exit_stamp IS NULL
+SELECT COUNT(id) as remaining FROM `ticket` WHERE exit_stamp is NULL;
+SELECT * from ticket as t INNER JOIN patients as p ON p.patient_id=t.patient_id WHERE t.exit_stamp IS NULL;

@@ -2,18 +2,49 @@
  require_once 'utils.php';
     $ticket_number="";
     $ticket_timestamp="";
+  
+
+    $patients_id = trim($_POST['patients_id']);
    
  if (isset($_GET['action']) && $_GET['action']=="new_ticket") {
-    queryMysql("INSERT INTO `ticket` (`id`, `entry_stamp`, `exit_stamp`) VALUES (NULL, CURRENT_TIMESTAMP, NULL);");
+    
+    queryMysql("INSERT INTO `ticket` (`id`, `entry_stamp`, `exit_stamp`, `patients_id`) VALUES (NULL, CURRENT_TIMESTAMP, NULL, $patients_id) (SELECT MAX(patients_id) FROM patients)");
+   
+   
     $result=queryMysql("SELECT * FROM ticket ORDER BY id DESC;");
     $row=$result->fetch_array(MYSQLI_ASSOC);
     $ticket_number=$row['id'];
     $ticket_timestamp=$row['entry_stamp'];
+
+
+    
+    }
+?>
+ <?php
+$server = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'wamuiga_db';
+
+// connect to the database
+$mysqli = new mysqli($server, $user, $pass, $db);
+foreach($mysqli->query('SELECT MAX(patients_id) FROM patients' ) as $row ){
+
+    echo "
+  
+                <div class='card'>
+                    <div class='card text-black bg-flat-color-5'>
+                        <div class='stat-widget-one'>
+                            <div class='stat-icon dib'><i class='ti-user text-primary border-primary'></i></div>
+                            <div class='stat-content dib'>
+    <h5><br> last patient id regestared <br>";
+    echo "-----> " . $row['MAX(patients_id)'];
+"<br></div></div></div></div></div>";
     
     }
  
+$output = NULL; 
 ?>
-
  
 <style>
      .column2 {

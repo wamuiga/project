@@ -44,7 +44,7 @@ $db = mysqli_connect('localhost','root','','wamuiga_db')
   
   $username = trim($_SESSION["username"]); 
    
-   $query = "INSERT INTO infor ( firstname, lastname, city, age, phonenumber, reg_no, username ) values ('$firstname',
+   $query = "INSERT INTO patients ( firstname, lastname, city, age, phonenumber, reg_no, username ) values ('$firstname',
     '$lastname','$city','$age','$phonenumber','$reg_no', '$username')";
    mysqli_query($db , $query) or die('Error in inserting.');
 
@@ -156,9 +156,9 @@ div {
     <input type="text" name="city" id="city" placeholder="c i t y "/><br>
     <input type="text" name="reg_no" id="reg_no" placeholder="R E G___N O "/><br>
 <input type="text" name="phonenumber"  id="phonenumber" placeholder="p h o n e n u m b e r  "><br>
-
-<a href="regpage.php?action=new_ticket"  class="button" onclick="printDiv('printTable')" value="print a div!" >
 <input type="submit" name="send" value="send"  id="send" class="btn btn-success">
+<a href="regpage.php?action=new_ticket"  class="button" onclick="printDiv('printTable')" value="print a div!" >jjjjj
+
 </a>
 
 <br><hr>

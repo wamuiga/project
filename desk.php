@@ -368,12 +368,12 @@ or die('Error connecting to MySQL server.');
                         <form method="post">
         
         <div class="wrap">
-       <div class="search">
-          <input type="text" name="search" class="searchTerm" placeholder="What are you looking for?">
-          <button type="submit" name ="submit" value="search" class="searchButton">
-            <i class="fa fa-search"></i>
-         </button>
-       </div>
+            <div class="search">
+                <input type="text" name="search" class="searchTerm" placeholder="Search patient by name...">
+                <button type="submit" name ="submit" value="search" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
     </div>
     </form>
                         </ol>
@@ -491,7 +491,7 @@ $output = NULL;
     
       $search = $_POST['search'];
     
-      $sql = "SELECT * FROM infor WHERE reg_no = '$search'";
+      $sql = "SELECT * FROM patients WHERE reg_no = '$search'";
       $result = mysqli_query($conn, $sql);
     
       if (mysqli_num_rows($result) > 0) {
